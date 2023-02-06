@@ -1,0 +1,49 @@
+{
+  "users": [{
+      "id": 1,
+      "name": "Charlotte",
+      "avatar": "https://i.pravatar.cc/150?img=1"
+    },
+    {
+      "id": 2,
+      "name": "Isabella",
+      "avatar": "https://i.pravatar.cc/150?img=2"
+    },
+    {
+      "id": 3,
+      "name": "David",
+      "avatar": "https://i.pravatar.cc/150?img=3"
+    },
+    {
+      "id": 4,
+      "name": "Oliver",
+      "avatar": "https://i.pravatar.cc/150?img=4"
+    },
+    {
+      "id": 5,
+      "name": "Amelia",
+      "avatar": "https://i.pravatar.cc/150?img=5"
+    },
+    {
+      "id": 6,
+      "name": "Benjamin",
+      "avatar": "https://i.pravatar.cc/150?img=6"
+    }
+  ],
+  "discussions": [{
+    "id": 1,
+    "date": "1675693452002",
+    "user": 1,
+    "text": "this is a sample text for discussion",
+    "likes": 5,
+    "iLikedIt": true,
+    "replies": [{
+      "id": 1,
+      "date": "1675693468378",
+      "user": 2,
+      "text": "this is a sample text for reply",
+      "likes": 5,
+      "iLikedIt": true
+    }]
+  }]
+}
