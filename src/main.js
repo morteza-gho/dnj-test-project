@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router/index';
 
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" // bootstrap js file
+import "../node_modules/bootstrap-icons/font/bootstrap-icons.css"
 
 import ToastPlugin from "vue-toast-notification"; // toast package
 import 'vue-toast-notification/dist/theme-sugar.css'; // toast package css file

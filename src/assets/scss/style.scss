@@ -1,2 +1,184 @@
 @import "./general";
 
+.discussions-wrapper {
+  width: 500px;
+  margin: $spacer*2 auto;
+  height: calc(100vh - ($new_discussion_height + $spacer*2));
+  background: #FFF;
+  position: relative;
+  padding-top: $new_discussion_height;
+  @include border-radius(8px);
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+
+  .avatar {
+    min-width: 40px;
+    max-width: 40px;
+    margin-right: $spacer;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @include border-radius(50%);
+    }
+  }
+
+  .new-discussion {
+    display: flex;
+    align-items: center;
+    height: $new_discussion_height;
+    background: $gray-100;
+    padding: $spacer;
+    border-bottom: 2px solid $gray-200;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    @include border-radius(8px 8px 0 0);
+
+    .new-discussion-form {
+      width: 100%;
+    }
+
+    .form-control {
+      border: 2px solid $gray-200;
+      @include font-size(16px);
+      @include border-radius(5px);
+
+      &:focus {
+        box-shadow: none;
+        border-color: $gray-300;
+      }
+    }
+
+  } // .new-discussion
+
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $gray-500;
+  }
+
+  .discussions {
+    height: 100%;
+    overflow-y: auto;
+    
+    .discussion-item {
+      display: flex;
+      padding: $spacer;
+      align-items: flex-start;
+      border-bottom: 2px solid $gray-200;
+      position: relative;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      &.has-reply {
+
+        &:before {
+          content: '';
+          border-left: 2px solid darken($gray-100, 3%);
+          height: calc(100% - 90px);
+          position: absolute;
+          top: 70px;
+          left: 35px;
+        }
+        
+      }
+
+      .content {
+
+        .username {
+          font-weight: 600;
+          @include font-size(16px);
+        }
+        .time {
+          color: $gray-500;
+          margin-left: 10px;
+          @include font-size(14px);
+        }
+        .text {
+          color: $gray-700;
+          @include font-size(14px);
+        }
+
+        .actions {
+          display: flex;
+          align-items: center;
+          margin-top: 8px;
+
+          .action-item {
+            margin-right: $spacer;
+            cursor: pointer;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+
+          .likes {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 50px;
+            background: darken($gray-100, 3%);
+            padding: 2px 5px;
+            @include transition();
+            @include border-radius(30px);
+
+            &:hover {
+              background: $gray-200;
+            }
+
+            .icon {
+              color: $gray-500;
+              @include font-size(15px);
+            }
+            .count {
+              font-weight: 700;
+              @include font-size(14px);
+            }
+
+            &.liked {
+              background: $primary;
+              .icon, .count {
+                color: #FFF;
+              }
+            }
+
+          } // .likes
+
+          .reply-btn {
+            color: $primary;
+            font-weight: 600;
+            @include font-size(15px);
+          }
+
+        } // .actions
+
+      } // .content
+
+      .replyes {
+        margin-top: 8px;
+
+        &:before {
+          display: none;
+        }
+
+        .discussion-item {
+          border-bottom: 0;
+          padding-left: 0;
+        }
+      }
+
+    } // .discussion-item
+
+  } // .discussions
+
+} // .discussions-wrapper

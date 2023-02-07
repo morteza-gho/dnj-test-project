@@ -63,7 +63,7 @@ const store = createStore({
       try {
         const { status, data } = await axios.get(`${BASE_URL}/discussions`);
         if (status === 200) {
-          commit('setDiscussion', data);
+          commit('setDiscussions', data);
         }
       } catch (err) {
         $toast.error(err.message);
