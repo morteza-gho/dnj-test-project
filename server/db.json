@@ -31,19 +31,53 @@
     }
   ],
   "discussions": [{
-    "id": 1,
-    "date": "1675693452002",
-    "user": 1,
-    "text": "this is a sample text for discussion",
-    "likes": 5,
-    "iLikedIt": true,
-    "replies": [{
       "id": 1,
-      "date": "1675693468378",
-      "user": 2,
-      "text": "this is a sample text for reply",
+      "date": "1675693452002",
+      "user": {
+        "id": 1,
+        "name": "Charlotte",
+        "avatar": "https://i.pravatar.cc/150?img=1"
+      },
+      "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
       "likes": 5,
-      "iLikedIt": true
-    }]
-  }]
+      "iLikedIt": true,
+      "replies": [{
+          "id": 1,
+          "date": "1675693468378",
+          "user": {
+            "id": 2,
+            "name": "Isabella",
+            "avatar": "https://i.pravatar.cc/150?img=2"
+          },
+          "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
+          "likes": 8,
+          "iLikedIt": true
+        },
+        {
+          "id": 2,
+          "date": "1675693468378",
+          "user": {
+            "id": 3,
+            "name": "David",
+            "avatar": "https://i.pravatar.cc/150?img=3"
+          },
+          "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
+          "likes": 0,
+          "iLikedIt": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "date": "1675693452002",
+      "user": {
+        "id": 4,
+        "name": "Oliver",
+        "avatar": "https://i.pravatar.cc/150?img=4"
+      },
+      "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
+      "likes": 0,
+      "iLikedIt": false
+    }
+  ]
 }
