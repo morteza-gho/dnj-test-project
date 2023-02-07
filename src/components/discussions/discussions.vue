@@ -15,155 +15,69 @@
 
     <div class="discussions">
 
-      <div class="discussion-item has-reply">
+      <discussion-item v-for="discussion in discussions" :key="discussion.id" :data="discussion"></discussion-item>
+
+      <!-- <div v-for="discussion in discussions" :key="discussion.id" class="discussion-item"
+        :class="discussion.replies?.length ? 'has-reply' : ''">
 
         <div class="avatar">
-          <img src="../../assets/images/morteza.jpg" alt="" />
+          <img :src="discussion.user.avatar" :alt="discussion.user.name" />
         </div>
 
         <div class="content">
 
           <header class="header">
-            <span class="username">Bessie Copper</span>
-            <span class="time">2d ago</span>
+            <span class="username">{{ discussion.user.name }}</span>
+            <span class="time">{{ timeStampToDate(discussion.date) }}</span>
           </header>
 
-          <div class="text">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.
-          </div>
+          <div class="text">{{ discussion.text }}</div>
 
           <footer class="actions">
-            <span class="action-item likes liked">
+            <span :class="`action-item likes ${discussion.iLikedIt ? 'liked' : ''}`">
               <b class="icon bi bi-hand-thumbs-up-fill"></b>
-              <span class="count">5</span>
+              <span class="count">{{ discussion.likes }}</span>
             </span>
             <span class="action-item reply-btn">Reply</span>
           </footer>
 
-          <div class="replyes">
+          <div v-if="discussion.replies?.length" class="replyes">
 
-            <div class="discussion-item">
+            <div v-for="reply in discussion.replies" class="discussion-item">
 
               <div class="avatar">
-                <img src="../../assets/images/morteza.jpg" alt="" />
+                <img :src="reply.user.avatar" :alt="reply.user.name" />
               </div>
 
               <div class="content">
                 <header class="header">
-                  <span class="username">Bessie Copper</span>
-                  <span class="time">2d ago</span>
+                  <span class="username">{{ reply.user.name }}</span>
+                  <span class="time">{{ timeStampToDate(reply.date) }}</span>
                 </header>
 
-                <div class="text">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt
-                  numquam.
-                </div>
+                <div class="text">{{ reply.text }} </div>
 
                 <footer class="actions">
-                  <span class="action-item likes">
+                  <span :class="`action-item likes ${reply.iLikedIt ? 'liked' : ''}`">
                     <b class="icon bi bi-hand-thumbs-up-fill"></b>
-                    <span class="count">0</span>
-                  </span>
-                </footer>
-              </div>
-            </div>
-
-            <div class="discussion-item">
-
-              <div class="avatar">
-                <img src="../../assets/images/morteza.jpg" alt="" />
-              </div>
-
-              <div class="content">
-                <header class="header">
-                  <span class="username">Bessie Copper</span>
-                  <span class="time">2d ago</span>
-                </header>
-
-                <div class="text">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt
-                  numquam.
-                </div>
-
-                <footer class="actions">
-                  <span class="action-item likes liked">
-                    <b class="icon bi bi-hand-thumbs-up-fill"></b>
-                    <span class="count">3</span>
+                    <span class="count">{{ reply.likes }}</span>
                   </span>
                 </footer>
               </div>
             </div>
 
           </div>
-          <!-- end of .replyes -->
 
         </div>
 
-      </div>
-      <!-- end of .discussion-item -->
-
-      <div class="discussion-item">
-
-        <div class="avatar">
-          <img src="../../assets/images/morteza.jpg" alt="" />
-        </div>
-
-        <div class="content">
-
-          <header class="header">
-            <span class="username">Bessie Copper</span>
-            <span class="time">2d ago</span>
-          </header>
-
-          <div class="text">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.
-          </div>
-
-          <footer class="actions">
-            <span class="action-item likes">
-              <b class="icon bi bi-hand-thumbs-up-fill"></b>
-              <span class="count">2</span>
-            </span>
-            <span class="action-item reply-btn">Reply</span>
-          </footer>
-
-        </div>
-
-      </div>
-      <!-- end of .discussion-item -->
-
-      <div class="discussion-item">
-
-        <div class="avatar">
-          <img src="../../assets/images/morteza.jpg" alt="" />
-        </div>
-
-        <div class="content">
-
-          <header class="header">
-            <span class="username">Bessie Copper</span>
-            <span class="time">2d ago</span>
-          </header>
-
-          <div class="text">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.
-          </div>
-
-          <footer class="actions">
-            <span class="action-item likes">
-              <b class="icon bi bi-hand-thumbs-up-fill"></b>
-              <span class="count">2</span>
-            </span>
-            <span class="action-item reply-btn">Reply</span>
-          </footer>
-
-        </div>
-
-      </div>
+      </div> -->
       <!-- end of .discussion-item -->
 
     </div>
     <!-- END OF .discussions -->
+
+
+
 
   </section>
 
@@ -172,6 +86,8 @@
 import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 import Loading from '../Global/Loading.vue';
+import {timeStampToDate} from "../../functions.js"
+import DiscussionItem from './DiscussionItem.vue';
 
 const store = useStore();
 const discussions = computed(() => store.getters.allDiscussions);

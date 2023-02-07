@@ -32,7 +32,7 @@
   ],
   "discussions": [{
       "id": 1,
-      "date": "1675693452002",
+      "date": 1672937489,
       "user": {
         "id": 1,
         "name": "Charlotte",
@@ -43,7 +43,7 @@
       "iLikedIt": true,
       "replies": [{
           "id": 1,
-          "date": "1675693468378",
+          "date": 1672771889,
           "user": {
             "id": 2,
             "name": "Isabella",
@@ -51,11 +51,11 @@
           },
           "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
           "likes": 8,
-          "iLikedIt": true
+          "iLikedIt": false
         },
         {
           "id": 2,
-          "date": "1675693468378",
+          "date": 1672776329,
           "user": {
             "id": 3,
             "name": "David",
@@ -63,13 +63,13 @@
           },
           "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
           "likes": 0,
-          "iLikedIt": false
+          "iLikedIt": true
         }
       ]
     },
     {
       "id": 2,
-      "date": "1675693452002",
+      "date": 1673413529,
       "user": {
         "id": 4,
         "name": "Oliver",
