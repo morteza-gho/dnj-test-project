@@ -63,21 +63,21 @@
           },
           "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
           "likes": 0,
-          "iLikedIt": true
+          "iLikedIt": false
         }
       ]
     },
     {
       "id": 2,
-      "date": 1673413529,
+      "date": 1672776329,
       "user": {
-        "id": 4,
-        "name": "Oliver",
-        "avatar": "https://i.pravatar.cc/150?img=4"
+        "id": 5,
+        "name": "Amelia",
+        "avatar": "https://i.pravatar.cc/150?img=5"
       },
       "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
-      "likes": 0,
-      "iLikedIt": false
+      "likes": 1,
+      "iLikedIt": true
     }
   ]
 }
