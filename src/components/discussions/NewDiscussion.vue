@@ -8,7 +8,7 @@
         ref="newDisRef">
       <small class="text-danger error-text" v-if="isRequired">Required</small>
       <span class="spinner-grow spinner-grow-sm loading" v-if="isLoading"></span>
-      <b class="bi bi-x cancel-reply" @click="cancelReply"></b>
+      <b class="bi bi-x cancel-reply" title="cancel reply" @click="cancelReply" v-if="parent"></b>
     </form>
   </div>
 </template>
