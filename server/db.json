@@ -1,5 +1,6 @@
 {
-  "users": [{
+  "users": [
+    {
       "id": 1,
       "name": "Charlotte",
       "avatar": "https://i.pravatar.cc/150?img=1"
@@ -30,7 +31,8 @@
       "avatar": "https://i.pravatar.cc/150?img=6"
     }
   ],
-  "discussions": [{
+  "discussions": [
+    {
       "id": 1,
       "date": 1672937489,
       "user": {
@@ -39,9 +41,10 @@
         "avatar": "https://i.pravatar.cc/150?img=1"
       },
       "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
-      "likes": 5,
-      "iLikedIt": true,
-      "replies": [{
+      "likes": 4,
+      "iLikedIt": false,
+      "replies": [
+        {
           "id": 1,
           "date": 1672771889,
           "user": {
@@ -62,8 +65,8 @@
             "avatar": "https://i.pravatar.cc/150?img=3"
           },
           "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
-          "likes": 0,
-          "iLikedIt": false
+          "likes": 1,
+          "iLikedIt": true
         }
       ]
     },

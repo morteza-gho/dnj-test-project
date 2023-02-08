@@ -54,11 +54,13 @@ const props = defineProps({
 const likeDislike = async () => {
   try {
     const dataModel = Object.assign(props.data, {
-      likes: props.data.iLikedIt ? props.data.likes -= 1 : props.data.likes += 1,
+      likes: props.data.iLikedIt ? props.data.likes -= 1 : props.data.likes += 1, // add||minus likes count
       iLikedIt: !props.data.iLikedIt
     });
-    console.log(dataModel)
-    const { status, data } = await axios.put(`${BASE_URL}/discussions/${props.data.id}`, dataModel);
+    if (props.data.replies) {
+      // TODO Because there is need server actions to like||dislike discussions, this action just fire for main discussions, not for eplies
+      const { status, data } = await axios.put(`${BASE_URL}/discussions/${props.data.id}`, dataModel);
+    }
   } catch (err) {
     toast.error(err.message)
   }
