@@ -40,7 +40,7 @@
         "name": "Charlotte",
         "avatar": "https://i.pravatar.cc/150?img=1"
       },
-      "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
+      "text": "Whether a medieval typesetter chose to garble a well-known (but non-Biblical—that would have been sacrilegious) text, or whether a quirk in the 1914 Loeb Edition inspired a graphic designer, it's admittedly an odd way for Cicero to sail into the 21st century",
       "likes": 5,
       "iLikedIt": true,
       "replies": [
@@ -75,18 +75,19 @@
     {
       "id": 2,
       "date": 1672776329,
+      "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
+      "likes": 1,
+      "iLikedIt": true,
       "user": {
         "id": 5,
         "name": "Amelia",
         "avatar": "https://i.pravatar.cc/150?img=5"
       },
-      "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
-      "likes": 1,
-      "iLikedIt": true
+      "replies": []
     },
     {
       "id": "3a99b0f1-d70d-484f-b87d-475c5f9e4396",
-      "text": "this is a test discussion. this is a test discussion. this is a test discussion. this is a test discussion. this is a test discussion. this is a test discussion.",
+      "text": "It's difficult to find examples of lorem ipsum in use before Letraset made it popular as a dummy text in the 1960s, although McClintock says he remembers coming across the lorem ipsum passage in a book of old metal type samples. So far he hasn't relocated where he once saw the passage, but the popularity of Cicero in the 15th century supports the theory that the filler text has been used for centuries",
       "date": "2023-02-08T04:11:07.023Z",
       "likes": 0,
       "iLikedIt": false,
@@ -94,7 +95,8 @@
         "id": 0,
         "name": "Oliver",
         "avatar": "https://i.pravatar.cc/150?img=12"
-      }
+      },
+      "replies": []
     },
     {
       "id": "4a151be2-3a67-4653-80e0-912545382fee",
@@ -106,7 +108,8 @@
         "id": 0,
         "name": "Oliver",
         "avatar": "https://i.pravatar.cc/150?img=12"
-      }
+      },
+      "replies": []
     }
   ]
 }

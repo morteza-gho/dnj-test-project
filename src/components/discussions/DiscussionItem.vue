@@ -21,10 +21,9 @@
           <b class="icon bi bi-hand-thumbs-up-fill"></b>
           <span class="count">{{ data.likes }}</span>
         </span>
-        <span class="action-item text-btn" v-if="showReply">Reply</span>
+        <span class="action-item text-btn" v-if="showReply" @click="reply">Reply</span>
         <span class="action-item text-btn text-danger" v-if="CURRENT_USER.id == data.user.id"
           @click="deleteDiscussion(data)">Delete</span>
-
 
       </footer>
 
@@ -32,6 +31,9 @@
         <discussion-item v-for="reply in data.replies" :key="reply.id" :data="reply"
           :show-reply="false"></discussion-item>
       </div>
+
+      <new-discussion v-if="data.showReplyForm" placeholder="Reply" :parent="data"
+        @cancel-reply="onCancelReply"></new-discussion>
 
     </div>
   </div>
@@ -46,6 +48,7 @@ import { BASE_URL, CURRENT_USER } from './../../Constants';
 import { useToast } from "vue-toast-notification";
 import axios from "axios";
 import store from "../../store";
+import NewDiscussion from './NewDiscussion.vue';
 
 const toast = useToast();
 
@@ -65,17 +68,25 @@ const likeDislike = async () => {
     });
     if (!props.data.is_reply) {
       // TODO Because there is need server actions to like||dislike discussions, this action just fire for main discussions, not for eplies
-      const { status, data } = await axios.put(`${BASE_URL}/discussions/${props.data.id}`, dataModel);
+      await axios.put(`${BASE_URL}/discussions/${props.data.id}`, dataModel);
     }
   } catch (err) {
     toast.error(err.message)
   }
-}
+};
+
+const reply = () => {
+  Object.assign(props.data, { showReplyForm: true });
+};
+const onCancelReply = () => {
+  // use emit to cancel reply and close reply form
+  Object.assign(props.data, { showReplyForm: false });
+};
 
 const deleteDiscussion = async () => {
   if (window.confirm('Are you sure to delete this discussion?')) {
     await store.dispatch('deleteDiscussion', props.data.id);
   }
-}
+};
 
 </script>
