@@ -41,12 +41,13 @@
         "avatar": "https://i.pravatar.cc/150?img=1"
       },
       "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
-      "likes": 4,
-      "iLikedIt": false,
+      "likes": 5,
+      "iLikedIt": true,
       "replies": [
         {
           "id": 1,
           "date": 1672771889,
+          "is_reply": true,
           "user": {
             "id": 2,
             "name": "Isabella",
@@ -59,6 +60,7 @@
         {
           "id": 2,
           "date": 1672776329,
+          "is_reply": true,
           "user": {
             "id": 3,
             "name": "David",
@@ -81,6 +83,30 @@
       "text": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores repellendus mollitia nesciunt numquam.",
       "likes": 1,
       "iLikedIt": true
+    },
+    {
+      "id": "3a99b0f1-d70d-484f-b87d-475c5f9e4396",
+      "text": "this is a test discussion. this is a test discussion. this is a test discussion. this is a test discussion. this is a test discussion. this is a test discussion.",
+      "date": "2023-02-08T04:11:07.023Z",
+      "likes": 0,
+      "iLikedIt": false,
+      "user": {
+        "id": 0,
+        "name": "Oliver",
+        "avatar": "https://i.pravatar.cc/150?img=12"
+      }
+    },
+    {
+      "id": "4a151be2-3a67-4653-80e0-912545382fee",
+      "text": "Creation timelines for the standard lorem ipsum passage vary, with some citing the 15th century and others the 20th.",
+      "date": "2023-02-08T04:25:11.657Z",
+      "likes": 0,
+      "iLikedIt": false,
+      "user": {
+        "id": 0,
+        "name": "Oliver",
+        "avatar": "https://i.pravatar.cc/150?img=12"
+      }
     }
   ]
 }

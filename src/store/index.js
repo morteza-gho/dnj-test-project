@@ -3,7 +3,7 @@ import { BASE_URL } from './../Constants';
 import { createStore } from "vuex";
 import { useToast } from "vue-toast-notification";
 
-const $toast = useToast();
+const toast = useToast();
 
 const store = createStore({
 
@@ -32,7 +32,7 @@ const store = createStore({
     },
 
     addDiscussion(state, newItem) {
-      state.discussions.unshift(newItem);
+      state.discussions.push(newItem);
     },
 
     updateDiscussion(state, updtedItem) {
@@ -55,7 +55,7 @@ const store = createStore({
           commit('setUsers', data);
         }
       } catch (err) {
-        $toast.error(err.message);
+        toast.error(err.message);
       }
     },
 
@@ -66,7 +66,7 @@ const store = createStore({
           commit('setDiscussions', data);
         }
       } catch (err) {
-        $toast.error(err.message);
+        toast.error(err.message);
       }
     },
 
@@ -77,7 +77,7 @@ const store = createStore({
           commit('addDiscussion', data);
         }
       } catch (err) {
-        $toast.error(err.message);
+        toast.error(err.message);
       }
     },
 
@@ -88,7 +88,7 @@ const store = createStore({
           commit('updateDiscussion', data)
         }
       } catch (err) {
-        $toast.error(err.message);
+        toast.error(err.message);
       }
     },
 
@@ -99,7 +99,7 @@ const store = createStore({
           commit('deleteDiscussion', itemId)
         }
       } catch (err) {
-        $toast.error(err.message);
+        toast.error(err.message);
       }
     },
 
