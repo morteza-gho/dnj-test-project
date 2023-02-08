@@ -12,6 +12,10 @@ In this project I use [json-server](https://www.npmjs.com/package/json-server) a
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
+## Project Sample
+
+![discussions](discussion.png)
+
 ## Project Setup
 
 ```sh
